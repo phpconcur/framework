@@ -1,0 +1,26 @@
+{
+    "name": "concur/framework",
+    "type": "library",
+    "description": "Main framwework for Composer",
+    "keywords": ["twig","resource", "css", "js"],
+    "homepage": "https://github.com/phpconcur/framework",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Chris Chase",
+            "email": "concur@sirmonkeys.com",
+            "homepage": "https://sirmonkeys.com",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.5.0",
+        "twig/twig": "^1.18|^2.0"
+    },
+    "autoload": {
+        "psr-4" : {
+			"Concur\\": "src"
+        }
+    }
+}
