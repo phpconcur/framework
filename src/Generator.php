@@ -3,7 +3,7 @@
 namespace Concur;
 
 class Generator {
-	static function Iterator($path, $importincludes = false) {
+	static function Iterator($path, $baseroute ='', $importincludes = false) {
 		$loader = new \Twig_Loader_Filesystem ( __DIR__ . DIRECTORY_SEPARATOR );
 		$twig = new \Twig_Environment ( $loader );
 		
@@ -70,7 +70,8 @@ class Generator {
 				'includes',
 				'templates',
 				'autoloads',
-				'path' 
+				'path',
+				'baseroute'
 		] ) );
 		
 		file_put_contents ( $path . 'autoload.php', $out );

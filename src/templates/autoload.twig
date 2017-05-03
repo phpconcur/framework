@@ -35,15 +35,21 @@ $viewLoader->addPath ( __DIR__ . '{{ template[1] }}', '{{ template[0] }}' );
 
 {% if routes %}
 // Slim Route Groups
-{% for route, include in routes %}
-$app->group ( '{{ route }}', function () use ($app, $container) {
-{% if Include %}
-//Imported From {{ Path }}
-{{ Include|replace({'<?php':''})|trim|raw }}
-//--------------------
-{% else %}
-	include_once __DIR__ . '{{ include }}';
+{% if baseroute}
+$app->group ( '{{ baseroute }}', function () use ($app, $container) {
 {% endif %}
-});
-{% endfor %}
+	{% for route, include in routes %}
+	$app->group ( '{{ route }}', function () use ($app, $container) {
+	{% if Include %}
+	//Imported From {{ Path }}
+	{{ Include|replace({'<?php':''})|trim|raw }}
+	//--------------------
+	{% else %}
+		include_once __DIR__ . '{{ include }}';
+	{% endif %}
+	});
+	{% endfor %}
+{% if baseroute}
+}
+{% endif %}
 {% endif %}
