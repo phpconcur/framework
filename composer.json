@@ -2,7 +2,7 @@
     "name": "concur/framework",
     "type": "library",
     "description": "Main framwework for Composer",
-    "keywords": ["twig","resource", "css", "js"],
+    "keywords": ["twig","resource", "css", "js", "concur", "phpconcur"],
     "homepage": "https://github.com/phpconcur/framework",
     "license": "MIT",
     "authors": [
@@ -20,7 +20,7 @@
     },
     "autoload": {
         "psr-4" : {
-			"Concur\\": "src"
+		"Concur\\": "src"
         }
     }
 }
