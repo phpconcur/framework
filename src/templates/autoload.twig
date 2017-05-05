@@ -35,7 +35,7 @@ $viewLoader->addPath ( __DIR__ . '{{ template[1] }}', '{{ template[0] }}' );
 
 {% if routes %}
 // Slim Route Groups
-{% if baseroute}
+{% if baseroute %}
 $app->group ( '{{ baseroute }}', function () use ($app, $container) {
 {% endif %}
 	{% for route, include in routes %}
@@ -49,7 +49,7 @@ $app->group ( '{{ baseroute }}', function () use ($app, $container) {
 	{% endif %}
 	});
 	{% endfor %}
-{% if baseroute}
+{% if baseroute %}
 }
 {% endif %}
 {% endif %}
